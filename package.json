@@ -26,6 +26,19 @@
 				}
 			}
 		},
+		"languages": [
+			{
+				"id": "volpe",
+				"aliases": [
+					"Volpe",
+					"volpe"
+				],
+				"extensions": [
+					".vlp"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
 		"commands": [
 			{
 				"command": "volpe-ls.restartServer",
