@@ -1,35 +1,35 @@
 {
-	"name": "glspc",
-	"displayName": "glspc",
-	"description": "Generic LSP Client for VS Code",
-	"version": "0.0.3",
-	"publisher": "torokati44",
-	"repository": "https://gitlab.com/torokati44/vscode-glspc",
+	"name": "volpe-ls",
+	"displayName": "Volpe Language Server",
+	"description": "Simple language server for Volpe",
+	"version": "0.0.1",
+	"publisher": "Viliam Vadocz",
+	"repository": "https://github.com/ViliamVadocz/vscode-volpe-ls",
 	"engines": {
 		"vscode": "^1.43.0"
 	},
 	"categories": [],
 	"activationEvents": [
-		"onLanguage:plaintext"
+		"onLanguage:volpe"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"configuration": {
 			"type": "object",
-			"title": "Generic LSP Client",
+			"title": "Volpe Language Server",
 			"properties": {
 				"glspc.serverPath": {
 					"scope": "window",
 					"type": "string",
 					"default": "",
-					"description": "The file path to the LSP server executable to start."
+					"description": "The file path to the Volpe language server executable."
 				}
 			}
 		},
 		"commands": [
 			{
-				"command": "glspc.restartServer",
-				"title": "GLSPC: Restart server"
+				"command": "volpe-ls.restartServer",
+				"title": "Volpe Language Server: Restart server"
 			}
 		]
 	},

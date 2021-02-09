@@ -11,27 +11,20 @@ let client: LanguageClient;
 let server: ChildProcess;
 
 function startServer(serverPath : string) {
-    /*
-        Examples: (you should expand ~ to your $HOME first)
-        "/usr/bin/ccls"
-        "~/.cargo/bin/rls"
-        "/usr/bin/clangd"
-        "~/.local/bin/pyls"
-    */
 
     if (serverPath) {
         const serverOptions: ServerOptions = async (): Promise<ChildProcess> => {
             server = spawn(serverPath);
-            window.showInformationMessage("Started language server: " + serverPath);
+            window.showInformationMessage("Started Volpe language server: " + serverPath);
             return server;
         };
 
         const clientOptions: LanguageClientOptions = {
-            documentSelector: [{ scheme: 'file', language: 'plaintext' }],
-            diagnosticCollectionName: 'glspc',
+            documentSelector: [{ scheme: 'file', language: 'volpe' }],
+            diagnosticCollectionName: 'volpe-ls',
         };
 
-        client = new LanguageClient('glspc', 'Generic LSP Client', serverOptions, clientOptions);
+        client = new LanguageClient('volpe-ls', 'Volpe Language Server', serverOptions, clientOptions);
 
         client.start();
     }
@@ -43,13 +36,13 @@ async function killServer() : Promise<void> {
 }
 
 export function activate(context: ExtensionContext) {
-    const config = workspace.getConfiguration("glspc");
+    const config = workspace.getConfiguration("volpe-ls");
     const pathConfig : string | undefined = config.get("serverPath");
     const serverPath : string = pathConfig ? pathConfig : "";
 
     startServer(serverPath);
 
-    context.subscriptions.push(commands.registerCommand('glspc.restartServer', async () => {
+    context.subscriptions.push(commands.registerCommand('volpe-ls.restartServer', async () => {
         await killServer();
         startServer(serverPath);
     }));
