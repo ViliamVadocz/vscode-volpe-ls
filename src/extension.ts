@@ -3,7 +3,7 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  * ------------------------------------------------------------------------------------------ */
 
-import { ExtensionContext, workspace, commands, window } from 'vscode';
+import { ExtensionContext, workspace, commands } from 'vscode';
 import { LanguageClient, LanguageClientOptions, ServerOptions } from 'vscode-languageclient';
 import { ChildProcess, spawn } from "child_process";
 
@@ -15,7 +15,6 @@ function startServer(serverPath : string) {
     if (serverPath) {
         const serverOptions: ServerOptions = async (): Promise<ChildProcess> => {
             server = spawn(serverPath);
-            window.showInformationMessage("Started Volpe language server: " + serverPath);
             return server;
         };
 
@@ -45,6 +44,10 @@ export function activate(context: ExtensionContext) {
     context.subscriptions.push(commands.registerCommand('volpe-ls.restartServer', async () => {
         await killServer();
         startServer(serverPath);
+    }));
+
+    context.subscriptions.push(commands.registerCommand("volpe-ls.killServer", async () => {
+        await killServer();
     }));
 }
 

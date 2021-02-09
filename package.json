@@ -43,6 +43,10 @@
 			{
 				"command": "volpe-ls.restartServer",
 				"title": "Volpe Language Server: Restart server"
+			},
+			{
+				"command": "volpe-ls.killServer",
+				"title": "Volpe Language Server: Kill server"
 			}
 		]
 	},
