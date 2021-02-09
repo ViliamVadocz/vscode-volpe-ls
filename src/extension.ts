@@ -3,8 +3,8 @@
  * Licensed under the MIT License. See License.txt in the project root for license information.
  * ------------------------------------------------------------------------------------------ */
 
-import { ExtensionContext, workspace, commands } from 'vscode';
-import { LanguageClient, LanguageClientOptions, ServerOptions } from 'vscode-languageclient';
+import { ExtensionContext, workspace, commands } from "vscode";
+import { LanguageClient, LanguageClientOptions, ServerOptions } from "vscode-languageclient";
 import { ChildProcess, spawn } from "child_process";
 
 let client: LanguageClient;
@@ -19,11 +19,11 @@ function startServer(serverPath : string) {
         };
 
         const clientOptions: LanguageClientOptions = {
-            documentSelector: [{ scheme: 'file', language: 'volpe' }],
-            diagnosticCollectionName: 'volpe-ls',
+            documentSelector: [{ scheme: "file", language: "volpe" }],
+            diagnosticCollectionName: "volpe-ls",
         };
 
-        client = new LanguageClient('volpe-ls', 'Volpe Language Server', serverOptions, clientOptions);
+        client = new LanguageClient("volpe-ls", "Volpe Language Server", serverOptions, clientOptions);
 
         client.start();
     }
@@ -41,7 +41,7 @@ export function activate(context: ExtensionContext) {
 
     startServer(serverPath);
 
-    context.subscriptions.push(commands.registerCommand('volpe-ls.restartServer', async () => {
+    context.subscriptions.push(commands.registerCommand("volpe-ls.restartServer", async () => {
         await killServer();
         startServer(serverPath);
     }));
