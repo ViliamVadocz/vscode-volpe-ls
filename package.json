@@ -2,8 +2,8 @@
 	"name": "volpe-ls",
 	"displayName": "Volpe Language Server",
 	"description": "Simple language server for Volpe",
-	"version": "0.0.1",
-	"publisher": "Viliam Vadocz",
+	"version": "0.0.2",
+	"publisher": "ViliamVadocz",
 	"repository": "https://github.com/ViliamVadocz/vscode-volpe-ls",
 	"engines": {
 		"vscode": "^1.43.0"
@@ -18,7 +18,7 @@
 			"type": "object",
 			"title": "Volpe Language Server",
 			"properties": {
-				"glspc.serverPath": {
+				"volpe-ls.serverPath": {
 					"scope": "window",
 					"type": "string",
 					"default": "",
