@@ -8,4 +8,4 @@ Set the `"volpe-ls.serverPath"` configuration setting to the full path of the Vo
 
 ## Credits
 
-This extension is based on [glscp](https://marketplace.visualstudio.com/items?itemName=torokati44.glspc), the Generic LSP Client for Visual Studio Code.
+This extension is based on [glspc](https://marketplace.visualstudio.com/items?itemName=torokati44.glspc), the Generic LSP Client for Visual Studio Code.
