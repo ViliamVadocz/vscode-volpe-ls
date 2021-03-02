@@ -2,7 +2,7 @@
 	"name": "volpe-ls",
 	"displayName": "Volpe Language Server",
 	"description": "Simple language server for Volpe",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"publisher": "ViliamVadocz",
 	"repository": "https://github.com/ViliamVadocz/vscode-volpe-ls",
 	"engines": {
@@ -57,14 +57,14 @@
 		"watch": "tsc -watch -p ./"
 	},
 	"dependencies": {
-		"vscode-languageclient": "^6.1.3"
+		"vscode-languageclient": "^7.0.0"
 	},
 	"devDependencies": {
-		"@types/node": "^12.12.0",
-		"@types/vscode": "^1.43.0",
-		"@typescript-eslint/eslint-plugin": "^3.0.2",
-		"@typescript-eslint/parser": "^3.0.2",
-		"eslint": "^7.1.0",
-		"typescript": "^4.0.2"
+		"@types/node": "^12.12.6",
+		"@types/vscode": "^1.53.0",
+		"@typescript-eslint/eslint-plugin": "^4.9.0",
+		"@typescript-eslint/parser": "^4.9.0",
+		"typescript": "^4.1.2",
+		"eslint": "^7.15.0"
 	}
 }

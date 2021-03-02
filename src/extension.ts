@@ -4,7 +4,7 @@
  * ------------------------------------------------------------------------------------------ */
 
 import { ExtensionContext, workspace, commands } from "vscode";
-import { LanguageClient, LanguageClientOptions, ServerOptions } from "vscode-languageclient";
+import { LanguageClient, LanguageClientOptions, ServerOptions } from "vscode-languageclient/node";
 import { ChildProcess, spawn } from "child_process";
 
 let client: LanguageClient;
