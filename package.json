@@ -2,7 +2,7 @@
 	"name": "volpe-ls",
 	"displayName": "Volpe Language Server",
 	"description": "Simple language server for Volpe",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"publisher": "ViliamVadocz",
 	"repository": "https://github.com/ViliamVadocz/vscode-volpe-ls",
 	"engines": {
